@@ -9,7 +9,7 @@
 	<body>
 		<p id="content"></p>
 		<script>
-			function a() {
+			function updateTime() {
 				const now = new Date();
 
 				const year = Date().split(" ")[3];
@@ -18,10 +18,16 @@
 				const day = Date().split(" ")[2];
 				const time = Date().split(" ")[4];
 
-				return `${year}/${month}/${day} ${time} - ${year}/${month}/${day} 23:59:59`;
+				document.querySelector(
+					"#content"
+				).textContent = `${year}/${month}/${day} ${time} - ${year}/${month}/${day} 23:59:59`;
 			}
 
-			document.querySelector("#content").textContent = a();
+			const updater = window.setInterval(function () {
+				updateTime();
+			}, 500);
+
+			updater();
 		</script>
 	</body>
 </html>
