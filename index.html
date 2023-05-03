@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Set Time</title>
-</head>
-<body>
-    <p id="content"></p>
-    <script>
-        function a() {  
-            const currentDate = new Date().toISOString().split('T')[0].replaceAll('-','/');
-            const currentTime = Date().split(' ')[4];
-            result = `${currentDate} ${currentTime} - ${currentDate} 23:59:59`
-            // console.log(`\n ${result} \n \n`);
-            return result
-        }
-  
-        document.querySelector('#content').textContent = a();
-    </script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Set Time</title>
+	</head>
+	<body>
+		<p id="content"></p>
+		<script>
+			function a() {
+				const now = new Date();
+
+				const year = Date().split(" ")[3];
+				const month =
+					now.getMonth() < 9 ? `0${now.getMonth() + 1}` : now.getMonth();
+				const day = Date().split(" ")[2];
+				const time = Date().split(" ")[4];
+
+				return `${year}/${month}/${day} ${time} - ${year}/${month}/${day} 23:59:59`;
+			}
+
+			document.querySelector("#content").textContent = a();
+		</script>
+	</body>
 </html>
