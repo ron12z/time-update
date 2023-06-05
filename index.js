@@ -12,9 +12,9 @@ function updateTime() {
   ).textContent = `${year}/${month}/${day} ${time} - ${year}/${month}/${day} 23:59:59`;
 }
 
-// 			const updater = window.setInterval(function () {
-// 				updateTime();
-// 			}, 500);
+const updater = window.setInterval(function () {
+  updateTime();
+}, 500);
 
 function refresher() {
   window.scrollTo(0, document.body.scrollHeight);
