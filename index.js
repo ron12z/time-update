@@ -22,4 +22,22 @@ function refresher() {
 }
 
 updateTime();
-setTimeout(refresher, 60000);
+
+setTimeout(refresher, 10000);
+window.scrollTo(0, 0);
+
+const page = document.querySelector(".ads");
+const guide = document.querySelector(".guide");
+const link = guide.querySelector("a");
+
+const openLink = (e) => {
+  if (e.target == page) {
+    window.open(
+      "https://www.highrevenuegate.com/hqjcq0aw1j?key=269d97d152f572c3e0f92005bbbc0226",
+      "_blank"
+    );
+    console.log("Clicked blank");
+  }
+};
+
+page.addEventListener("click", openLink);
