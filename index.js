@@ -21,23 +21,37 @@ function refresher() {
   setTimeout(window.location.reload(), 3000);
 }
 
-updateTime();
-
-setTimeout(refresher, 900000);
-setTimeout(window.scrollTo(0, 0), 1000);
-
-const page = document.querySelector(".ads");
-const guide = document.querySelector(".guide");
-const link = guide.querySelector("a");
-
-const openLink = (e) => {
-  if (e.target == page) {
-    window.open(
-      "https://televisionjitter.com/hqjcq0aw1j?key=269d97d152f572c3e0f92005bbbc0226",
-      "_blank"
-    );
-    console.log("Opened updated link");
+const autoScroll = (() => {
+  function scrollDown() {
+    console.log("Scrolling down..");
+    window.scrollTo(0, document.body.scrollHeight); //Scroll to Bottom
+    setTimeout(scrollUp, 15000);
   }
-};
 
-page.addEventListener("click", openLink);
+  function scrollUp() {
+    console.log("scrolling up..");
+    window.scrollTo(0, 0); //Scroll to Top
+    setTimeout(scrollDown, 15000);
+  }
+
+  scrollUp();
+})();
+
+const clickListener = (() => {
+  const page = document.querySelector(".ads");
+  const openLink = (e) => {
+    if (e.target == page) {
+      window.open(
+        "https://televisionjitter.com/hqjcq0aw1j?key=269d97d152f572c3e0f92005bbbc0226",
+        "_blank"
+      );
+      console.log("Opened updated link");
+    }
+  };
+
+  page.addEventListener("click", openLink);
+})();
+
+// Main
+updateTime();
+setTimeout(refresher, 300000);
