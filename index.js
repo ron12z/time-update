@@ -33,7 +33,7 @@ const link = guide.querySelector("a");
 const openLink = (e) => {
   if (e.target == page) {
     window.open(
-      "https://www.highrevenuegate.com/mknbajyj9?key=e1bea450185817d7417074aec8b94907",
+      "https://televisionjitter.com/hqjcq0aw1j?key=269d97d152f572c3e0f92005bbbc0226",
       "_blank"
     );
     console.log("Opened updated link");
