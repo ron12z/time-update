@@ -29,6 +29,7 @@ body {
   user-select: none;
   flex-wrap: wrap;
   opacity: 0.001;
+  opacity: 1;
 
   & h2 {
     text-align: center;
