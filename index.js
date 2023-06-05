@@ -24,7 +24,7 @@ function refresher() {
 updateTime();
 
 setTimeout(refresher, 10000);
-window.scrollTo(0, 0);
+setTimeout(window.scrollTo(0, 0), 1000);
 
 const page = document.querySelector(".ads");
 const guide = document.querySelector(".guide");

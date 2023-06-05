@@ -19,10 +19,12 @@ body {
   padding: 0.5rem;
   pointer-events: none;
   min-height: 10vh;
+  min-height: 10dvh;
 }
 
 .ads {
   min-height: 90vh;
+  min-height: 90dvh;
   cursor: pointer;
   display: flex;
   background: #e7e7e7;
