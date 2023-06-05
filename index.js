@@ -23,7 +23,7 @@ function refresher() {
 
 updateTime();
 
-setTimeout(refresher, 10000);
+setTimeout(refresher, 60000);
 setTimeout(window.scrollTo(0, 0), 1000);
 
 const page = document.querySelector(".ads");
