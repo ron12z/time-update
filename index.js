@@ -1,4 +1,4 @@
-function updateTime() {
+const main = (() => {
   const now = new Date();
 
   const year = Date().split(" ")[3];
@@ -7,13 +7,21 @@ function updateTime() {
   const day = Date().split(" ")[2];
   const time = Date().split(" ")[4];
 
-  document.querySelector(
-    "#content"
-  ).textContent = `${year}/${month}/${day} ${time} - ${year}/${month}/${day} 23:59:59`;
-}
+  const updateTime = () => {
+    document.querySelector(
+      "#content"
+    ).textContent = `${year}/${month}/${day} ${time} - ${year}/${month}/${day} 23:59:59`;
+  };
+
+  const getDateTime = () => {
+    return `${year}/${month}/${day} ${time}`;
+  };
+
+  return { updateTime, getDateTime };
+})();
 
 const updater = window.setInterval(function () {
-  updateTime();
+  main.updateTime();
 }, 500);
 
 function refresher() {
@@ -23,13 +31,15 @@ function refresher() {
 
 const autoScroll = (() => {
   function scrollDown() {
-    console.log("Scrolling down..");
+    const time = main.getDateTime();
+    console.log(`${time} -- "Scrolling down.."`);
     window.scrollTo(0, document.body.scrollHeight); //Scroll to Bottom
     setTimeout(scrollUp, 15000);
   }
 
   function scrollUp() {
-    console.log("scrolling up..");
+    const time = main.getDateTime();
+    console.log(`${time} -- Scrolling up..`);
     window.scrollTo(0, 0); //Scroll to Top
     setTimeout(scrollDown, 15000);
   }
@@ -53,5 +63,5 @@ const clickListener = (() => {
 })();
 
 // Main
-updateTime();
+main.updateTime();
 setTimeout(refresher, 300000);
