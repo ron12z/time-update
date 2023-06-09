@@ -14,4 +14,4 @@ function updateTime() {
 
 const updater = window.setInterval(function () {
   updateTime();
-}, 500)();
+}, 500);
