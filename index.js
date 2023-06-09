@@ -14,44 +14,4 @@ function updateTime() {
 
 const updater = window.setInterval(function () {
   updateTime();
-}, 500);
-
-function refresher() {
-  window.scrollTo(0, document.body.scrollHeight);
-  setTimeout(window.location.reload(), 3000);
-}
-
-const autoScroll = (() => {
-  function scrollDown() {
-    console.log("Scrolling down..");
-    window.scrollTo(0, document.body.scrollHeight); //Scroll to Bottom
-    setTimeout(scrollUp, 15000);
-  }
-
-  function scrollUp() {
-    console.log("scrolling up..");
-    window.scrollTo(0, 0); //Scroll to Top
-    setTimeout(scrollDown, 15000);
-  }
-
-  scrollUp();
-})();
-
-const clickListener = (() => {
-  const page = document.querySelector(".ads");
-  const openLink = (e) => {
-    if (e.target == page) {
-      window.open(
-        "https://televisionjitter.com/hqjcq0aw1j?key=269d97d152f572c3e0f92005bbbc0226",
-        "_blank"
-      );
-      console.log("Opened updated link");
-    }
-  };
-
-  page.addEventListener("click", openLink);
-})();
-
-// Main
-updateTime();
-setTimeout(refresher, 300000);
+}, 500)();
